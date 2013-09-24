@@ -1,0 +1,5 @@
+MarkupSafe
+Jinja2
+MySQL-python
+tornado
+torndb
