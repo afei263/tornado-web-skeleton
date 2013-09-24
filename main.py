@@ -10,10 +10,10 @@ from tornado.options import define, options
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
 define("port", default=8888, help="run on the given port", type=int)
-define("mysql_host", default="10.20.238.37:3306", help="api database host")
-define("mysql_database", default="saas", help="api database name")
+define("mysql_host", default="localhost:3306", help="api database host")
+define("mysql_database", default="dbname", help="api database name")
 define("mysql_user", default="root", help="api database user")
-define("mysql_password", default="kingsoft", help="api database password")
+define("mysql_password", default="password", help="api database password")
 
 
 class Application(tornado.web.Application):
