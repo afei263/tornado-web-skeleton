@@ -1,5 +1,5 @@
 MarkupSafe
 Jinja2
 MySQL-python
-tornado
-torndb
+tornado>=3.1.1
+torndb>=0.1
