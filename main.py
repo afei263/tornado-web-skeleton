@@ -9,6 +9,7 @@ import tornado.options
 from tornado.options import define, options
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
+define("address", default="", help="run on the given address")
 define("port", default=8888, help="run on the given port", type=int)
 define("mysql_host", default="localhost:3306", help="api database host")
 define("mysql_database", default="dbname", help="api database name")
@@ -86,7 +87,7 @@ class HomeHandler(BaseHandler):
 def main():
     tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(Application())
-    http_server.listen(options.port)
+    http_server.listen(options.port, options.address)
     tornado.ioloop.IOLoop.instance().start()
 
 
